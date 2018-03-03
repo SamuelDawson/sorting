@@ -45,8 +45,12 @@ int main(int argc, char *argv[]) {
   qsort(arr_1, arr_size, sizeof(*arr_1), compare_int);
   printf("qsort done\n");
   fflush(stdout);
-  bubble_sort(arr_2, arr_size, sizeof(*arr_1), compare_int);
+  insertion_sort(arr_2, arr_size, sizeof(*arr_1), compare_int);
   printf("Insertion sort done\n");
+  bubble_sort(arr_2, arr_size, sizeof(*arr_1), compare_int);
+  printf("Bubble sort done\n");
+  bogo_sort(arr_2, arr_size, sizeof(*arr_1), compare_int);
+  printf("Bogo sort done\n");
   fflush(stdout);
   
   //Compare results
