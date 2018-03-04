@@ -74,24 +74,6 @@ int main(int argc, char *argv[]) {
   argv = argv;
   char *result;
   srand(time(NULL));
-  //Qsort will work on arr_1, our sort will work on arr_2
-  //printf("qsort done\n");
-  //fflush(stdout);
-  //memcpy(arr_3, arr_1, sizeof(*arr_1) * arr_size);
-  //insertion_sort(arr_3, arr_size, sizeof(*arr_1), compare_int);
-  //printf("Insertion sort done\n");
-  //fflush(stdout);
-  //memcpy(arr_3, arr_1, sizeof(*arr_1) * arr_size);
-  //bubble_sort(arr_3, arr_size, sizeof(*arr_1), compare_int);
-  //printf("Bubble sort done\n");
-  //fflush(stdout);
-  //memcpy(arr_3, arr_1, sizeof(*arr_1) * arr_size);
-  //bogo_sort(arr_3, arr_size, sizeof(*arr_1), compare_int);
-  //printf("Bogo sort done\n");
-  //memcpy(arr_3, arr_1, sizeof(*arr_1) * arr_size);
-  //merge_sort(arr_3, arr_size, sizeof(*arr_1), compare_int);
-  //printf("Merge sort done\n");
-  //fflush(stdout);
   
   //Sort tests
   tests_run = 0;
