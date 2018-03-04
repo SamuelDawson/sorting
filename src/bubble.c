@@ -6,7 +6,8 @@ extern int int_to_int(const void*);
 
 void bubble_sort(void *ptr, size_t count, size_t size,
                     int (*comp)(const void*, const void*)) {
-  int i, swapped;
+  int swapped;
+  size_t i;
   char* arr = (char*) ptr;
   
   if (count <= 1) {

@@ -1,3 +1,6 @@
+#ifndef SAMSORT_H
+#define SAMSORT_H
+
 #include <stddef.h>
 
 #define DISPLAY_HEIGHT 40
@@ -13,13 +16,15 @@ void insertion_sort(void *ptr, size_t count, size_t size,
                     int (*comp)(const void*, const void*));
 
 void bubble_sort(void *ptr, size_t count, size_t size,
-                    int (*comp)(const void*, const void*));
+                 int (*comp)(const void*, const void*));
 
 void merge_sort(void *ptr, size_t count, size_t size,
-                    int (*comp)(const void*, const void*));
+                int (*comp)(const void*, const void*));
 
 void bogo_sort(void *ptr, size_t count, size_t size,
-                    int (*comp)(const void*, const void*));
+               int (*comp)(const void*, const void*));
 
 void merge_sort(void *ptr, size_t count, size_t size,
-                    int (*comp)(const void*, const void*));
+                int (*comp)(const void*, const void*));
+
+#endif

@@ -17,8 +17,9 @@ int int_to_int(const void* v) {
 
 void visualize_arr(void *ptr, size_t count, size_t size,
                    int (*to_int)(const void*)) { 
-  int i, max, display_count;
+  int max, display_count;
   int height_step, width_step;
+  size_t i;
   char* arr = (char*) ptr;
   if (count == 0) {
     return;
@@ -59,7 +60,7 @@ void swap(void* val1, void* val2, size_t size) {
   char* a = val1;
   char* b = val2;
   char tmp;
-  int i;
+  size_t i;
   for (i = 0; i < size; i++) {
     tmp = *a;
     *a++ = *b;
