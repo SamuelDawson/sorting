@@ -1,2 +1,2 @@
-#include "minunit.h"
 #include "merge.c"
+#include "minunit.h"

@@ -1,2 +1,2 @@
-#include "minunit.h"
 #include "../src/insertion.c"
+#include "minunit.h"
