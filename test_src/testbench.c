@@ -37,6 +37,9 @@ static int sort_test(void (*sort)(),
       success = 0;
     }
   }
+  free(arr_1);
+  free(arr_2);
+  free(arr_3);
   return success;
 }
 
