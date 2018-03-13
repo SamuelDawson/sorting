@@ -1,15 +1,12 @@
 CC=gcc
-CFLAGS=-Wall -Wpedantic
-
-DEPS=samsort.h
-OBJ=testbench.o common.o insertion.o bubble.o bogo.o merge.o
-
-%.o: %.c $(DEPS)
-		$(CC) -c -o $@ $< $(CFLAGS)
-
+SRC = $(wildcard src/*.c)
+TEST_SRC = $(wildcard test_src/*.c)
+INC = include
+OBJ = $(TEST_SRC:.c=.o)
+CFLAGS=-Wall -Wextra -pedantic -iquote $(INC) -iquote src
 test: $(OBJ)
-		gcc -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS)
 
+.PHONY: clean
 clean:
-	rm -f *.o
-	rm -f test
+	rm -f $(OBJ) test
