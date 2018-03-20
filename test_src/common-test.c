@@ -56,12 +56,11 @@ static char* swap_3() {
   return 0;
 }
 
-char* common_tests() {
+void common_tests() {
   mu_run_test(int_to_int_1);
   mu_run_test(int_to_int_2);
   mu_run_test(int_to_int_3);
   mu_run_test(swap_1);
   mu_run_test(swap_2);
   mu_run_test(swap_3);
-  return 0;
 }
