@@ -57,7 +57,7 @@
     }                                       \
     else {                                  \
       printf(KRED "Failed");                \
-      printf("%s", message);                \
+      printf("\n%s", message);              \
     }                                       \
     printf("\n" KNRM);                      \
   } while (0);

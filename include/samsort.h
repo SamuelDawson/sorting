@@ -27,4 +27,6 @@ void bogo_sort(void* ptr, size_t count, size_t size,
 void merge_sort(void* ptr, size_t count, size_t size,
                 int (*comp)(const void*, const void*));
 
+void quick_sort(void* ptr, size_t count, size_t size,
+                int (*comp)(const void*, const void*));
 #endif

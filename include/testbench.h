@@ -1,6 +1,7 @@
 #ifndef TESTBENCH_H
 #define TESTBENCH_H
 
-char* common_tests();
+void common_tests();
+void quick_tests();
 
 #endif

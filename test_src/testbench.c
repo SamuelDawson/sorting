@@ -9,7 +9,7 @@
 #include "samsort.h"
 
 #define ARR_SIZE_DEFAULT 10000
-#define MAX_VAL 10000
+#define MAX_VAL INT_MAX
 
 extern int compare_int(const void*, const void*);
 int tests_run, tests_passed;
@@ -77,6 +77,7 @@ static int sort_test_int(void (*sort)(), size_t arr_size) {
   for (i = 0; i < arr_size; i++) {
     if (arr_2[i] != arr_3[i]) {
       success = 0;
+      break;
     }
   }
   free(arr_1);
@@ -87,45 +88,45 @@ static int sort_test_int(void (*sort)(), size_t arr_size) {
 
 static char* test_bogo_1() {
   int result = sort_test_int(bogo_sort, 5);
-  mu_assert("error, bogo sort ints not successful", result == 1);
+  mu_assert("Bogo sort ints not successful", result == 1);
   return 0;
 }
 static char* test_bogo_2() {
   int result = sort_test_struct(bogo_sort, 5);
-  mu_assert("error, bogo sort structs not successful", result == 1);
+  mu_assert("Bogo sort structs not successful", result == 1);
   return 0;
 }
 
 static char* test_bubble_1() {
   int result = sort_test_int(bubble_sort, 1000);
-  mu_assert("error, bubble sort ints not successful", result == 1);
+  mu_assert("Bubble sort ints not successful", result == 1);
   return 0;
 }
 static char* test_bubble_2() {
   int result = sort_test_struct(bubble_sort, 1000);
-  mu_assert("error, bubble sort structs not successful", result == 1);
+  mu_assert("Bubble sort structs not successful", result == 1);
   return 0;
 }
 
 static char* test_insertion_1() {
   int result = sort_test_int(insertion_sort, 1000);
-  mu_assert("error, insertion sort ints not successful", result == 1);
+  mu_assert("Insertion sort ints not successful", result == 1);
   return 0;
 }
 static char* test_insertion_2() {
   int result = sort_test_struct(insertion_sort, 1000);
-  mu_assert("error, insertion sort structs not successful", result == 1);
+  mu_assert("Insertion sort structs not successful", result == 1);
   return 0;
 }
 
 static char* test_merge_1() {
   int result = sort_test_int(merge_sort, 1000);
-  mu_assert("error, merge sort ints not successful", result == 1);
+  mu_assert("Merge sort ints not successful", result == 1);
   return 0;
 }
 static char* test_merge_2() {
   int result = sort_test_struct(merge_sort, 1000);
-  mu_assert("error, merge sort structs not successful", result == 1);
+  mu_assert("Merge sort structs not successful", result == 1);
   return 0;
 }
 
@@ -145,12 +146,12 @@ int main(int argc, char* argv[]) {
   argv = argv;
   srand(time(NULL));
 
-  // Sort tests
   tests_run = tests_passed = 0;
-  all_sort_tests();
-
   // Unit tests
   common_tests();
+  quick_tests();
+  // Sort tests
+  all_sort_tests();
   printf("Tests passed: %d / %d\n", tests_passed, tests_run);
   
   return 0;
