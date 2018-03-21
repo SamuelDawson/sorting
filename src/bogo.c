@@ -3,10 +3,10 @@
 #include <time.h>
 #include "samsort.h"
 
-void bogo_sort(void* ptr, size_t count, size_t size,
-               int (*comp)(const void*, const void*)) {
+void bogo_sort(void *ptr, size_t count, size_t size,
+               int (*comp) (const void *, const void *)) {
   int in_order;
-  char* arr = ptr;
+  char *arr = ptr;
   srand(time(NULL));
   if (count <= 1) {
     return;
@@ -23,7 +23,7 @@ void bogo_sort(void* ptr, size_t count, size_t size,
     // Check if sorted
     in_order = 1;
     for (i = size; i < count * size; i += size) {
-      if (comp((void*)(arr + i - size), (void*)(arr + i)) != -1) {
+      if (comp((void *)(arr + i - size), (void *)(arr + i)) != -1) {
         in_order = 0;
         break;
       }

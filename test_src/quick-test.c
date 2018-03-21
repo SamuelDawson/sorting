@@ -6,9 +6,9 @@
 #define ARR_SIZE 100
 #define MAX_VAL INT_MAX
 
-extern int compare_int(const void*, const void*);
+extern int compare_int(const void *, const void *);
 
-static char* test_partition_1() {
+static char *test_partition_1() {
   int *arr;
   int i;
   int pivot_idx = 0;
@@ -18,10 +18,9 @@ static char* test_partition_1() {
   for (i = 0; i < ARR_SIZE; i++) {
     arr[i] = (rand() % MAX_VAL * 2) - MAX_VAL;
   }
-  
+
   //Partition
-  pivot_idx = partition(arr, sizeof(int), 0, ARR_SIZE-1,
-                        compare_int);
+  pivot_idx = partition(arr, sizeof(int), 0, ARR_SIZE - 1, compare_int);
 
   //Check that smaller values are to the left of pivot, larger to the right
   for (int i = 0; i < pivot_idx; i++) {
