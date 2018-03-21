@@ -130,6 +130,17 @@ static char* test_merge_2() {
   return 0;
 }
 
+static char* test_quick_1() {
+  int result = sort_test_int(quick_sort, 1000);
+  mu_assert("Quick sort ints not successful", result == 1);
+  return 0;
+}
+static char* test_quick_2() {
+  int result = sort_test_struct(quick_sort, 1000);
+  mu_assert("Quick sort structs not successful", result == 1);
+  return 0;
+}
+
 void all_sort_tests() {
   mu_run_test(test_bogo_1);
   mu_run_test(test_bogo_2);
@@ -139,6 +150,8 @@ void all_sort_tests() {
   mu_run_test(test_insertion_2);
   mu_run_test(test_merge_1);
   mu_run_test(test_merge_2);
+  mu_run_test(test_quick_1);
+  mu_run_test(test_quick_2);
 }
 
 int main(int argc, char* argv[]) {
