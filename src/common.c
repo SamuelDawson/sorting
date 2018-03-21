@@ -3,9 +3,9 @@
 #include "samsort.h"
 
 // A standard comp function
-int compare_int(const void* v1, const void* v2) {
-  int a = *(int*)v1;
-  int b = *(int*)v2;
+int compare_int(const void *v1, const void *v2) {
+  int a = *(int *)v1;
+  int b = *(int *)v2;
   if (a < b)
     return -1;
   else if (a == b)
@@ -14,14 +14,16 @@ int compare_int(const void* v1, const void* v2) {
     return 1;
 }
 
-int int_to_int(const void* v) { return *(int*)v; }
+int int_to_int(const void *v) {
+  return *(int *)v;
+}
 
-void visualize_arr(void* ptr, size_t count, size_t size,
-                   int (*to_int)(const void*)) {
+void visualize_arr(void *ptr, size_t count, size_t size,
+                   int (*to_int) (const void *)) {
   int max, display_count;
   int height_step, width_step;
   size_t i;
-  char* arr = (char*)ptr;
+  char *arr = (char *)ptr;
   if (count == 0) {
     return;
   } else if (count <= DISPLAY_HEIGHT) {
@@ -57,9 +59,9 @@ void visualize_arr(void* ptr, size_t count, size_t size,
   sleep(1);
 }
 
-void swap(void* val1, void* val2, size_t size) {
-  char* a = val1;
-  char* b = val2;
+void swap(void *val1, void *val2, size_t size) {
+  char *a = val1;
+  char *b = val2;
   char tmp;
   size_t i;
   for (i = 0; i < size; i++) {
